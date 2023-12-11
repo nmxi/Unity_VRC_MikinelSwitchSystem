@@ -1,0 +1,40 @@
+.settings-section {
+    background-color: rgb(46, 46, 46);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.settings-section-title-base {
+    background-color: rgb(96, 68, 50);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.settings-section-title-label {
+    padding-left: 5px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 15px;
+}
+
+.unity-label {
+    color: rgba(255, 255, 255, 255);
+}
+
+.header-text-label {
+    -unity-font: url('/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/Lato-Bold.ttf');
+    font-size: 12px;
+    -unity-font-style: normal;
+    -unity-text-align: middle-center;
+    color: rgb(224, 186, 173);
+}

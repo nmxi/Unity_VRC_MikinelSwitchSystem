@@ -1,0 +1,5 @@
+heroicons - MIT License
+https://heroicons.com/
+
+tabler-icons - MIT License
+https://github.com/tabler/tabler-icons/blob/master/LICENSE

@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement>
+        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
+        <ui:VisualElement name="Header">
+            <ui:VisualElement name="TitleImage" style="background-image: url(&apos;/Assets/mikinel/SwitchSystem/DataSource/TexMat/InspectorHeader.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(84, 84, 84); flex-grow: 0;">
+                <ui:VisualElement style="overflow: visible; flex-grow: 1; display: flex; flex-direction: row; min-height: 60px;">
+                    <ui:Label text="mikinel Switch System" class="header-text-label" style="flex-grow: 1; justify-content: center; overflow: visible; font-size: 16px;" />
+                    <ui:Label text="ver : " class="header-text-label" style="flex-grow: 0; justify-content: flex-end; overflow: hidden; flex-shrink: 1; flex-basis: auto; position: absolute; align-items: flex-end; height: 22px; top: auto; right: 0; bottom: 0; min-width: 98px; margin-bottom: 2px;" />
+                    <ui:Label text="0.1.0" name="Version" class="header-text-label" style="flex-grow: 0; justify-content: flex-end; overflow: hidden; flex-shrink: 1; flex-basis: auto; position: absolute; align-items: flex-end; height: 22px; top: auto; right: 0; bottom: 0; min-width: 40px; margin-bottom: 2px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="LanguageSelect" />
+        <ui:VisualElement style="align-items: center; justify-content: center;">
+            <ui:Button text="Close" name="Close" style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; min-height: 40px; width: 30%;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Space" style="height: 10px;" />
+        <ui:Toggle label="Disable show at next time" value="true" name="DisableShow" style="flex-direction: row; align-items: center;" />
+    </ui:VisualElement>
+</ui:UXML>

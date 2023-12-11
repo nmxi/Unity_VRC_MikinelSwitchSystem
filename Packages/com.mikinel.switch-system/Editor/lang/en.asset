@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c4423c463ac8e499d68d69ff6ecbf9, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: 
+  languageCode: en
+  languageDisplayName: English
+  text_generalSettings: General Settings
+  text_enableLinkMode: Enable Link Mode
+  text_linkTargetSwitch: Link Target Switch
+  text_syncMode: SyncMode
+  text_maxState: Max State
+  text_initializeState: Initialize State
+  text_interactionText: Interaction Text
+  text_proximity: Proximity (m)
+  text_notFoundColliderWarning: Not found Collider. Please add Collider to {0}. If
+    you don't have a collider, you can't interact with the switch.
+  text_disabledColliderWarning: Disable Collider. Please enable Collider to {0}.
+    If you don't have a collider, you can't interact with the switch.
+  text_linkTargetSwitchNullWarning: Link Target Switch is null. Please set Link Target
+    Switch to {0}
+  text_linkTargetSwitchSelfWarning: Link Target Switch is same as this switch. Please
+    set Link Target Switch to other switch.
+  text_linkTargetSwitchIsEnableLinkModeWarning: Link Target Switch is enabled Link
+    Mode. Please set the Link Target Switch to a switch with Link mode disabled.
+  text_mirrorSwitchSettings: Mirror Switch Settings
+  text_mirrorStateSwitchSettings: Mirror State Switch Settings
+  text_mirrorObjects: Mirror Objects
+  text_gameObjectSwitchSettings: GameObject Switch Settings
+  text_gameObjects: GameObjects
+  text_gameObjectStateSwitchSettings: GameObject State Switch Settings
+  text_enableObjects: Enable Objects
+  text_bgmSwitchSettings: BGM Switch Settings
+  text_audioSource: Audio Source
+  text_resetOnEnable: Reset On Enable
+  text_audioVolume: Audio Volume
+  text_enableFade: Enable Fade
+  text_fadeTime: Fade Time (s)
+  text_audioSourceNotFoundWarning: AudioSource is null.
+  text_colliderSwitchSettings: Collider Switch Settings
+  text_colliderObjects: Collider Objects
+  text_chairSwitchSettings: Chair Switch Settings
+  text_chairObjects: Chair Objects
+  text_interactAudio: Interact Audio
+  text_enableInteractionAudio: Enable Interaction Audio
+  text_interactAudioClip: Interact Audio Clip
+  text_interactAudioVolume: Interact Audio Volume
+  text_notFoundAudioSourceWarning: Not found AudioSource. Please add AudioSource
+    to {0}
+  text_disableAudioSourceWarning: Disable AudioSource. Please enable AudioSource
+    to {0}
+  text_advancedSettings: Advanced Settings
+  text_showSyncModeSuffix: Show Sync Mode Suffix
+  text_suffixFormat: Suffix Format
+  text_suffixSample: 'Suffix Sample : {0}'
+  text_stateChangedCustomEvent: State Changed Custom Event
+  text_udonEvents: Udon Events
+  text_debugLog: Debug Log
+  text_baseSettings: Switch Design Settings
+  text_interactAudioSource: Interact Audio Source
+  text_enableObjectControl: Enable Object Control
+  text_controlTargetObjects: Control Target Objects
+  text_enableAnimatorStateControl: Enable Animator State Control
+  text_targetAnimatorIntParameter: Target Parameter (int)
+  text_targetAnimators: Target Animators
+  text_enableAnimatorTriggerControl: Enable Animator Trigger Control
+  text_targetAnimatorTriggerParameter: Target Parameter (trigger)
+  text_animatorParameterNameWarning: Animator Parameter Name is empty. Please set
+    Animator Parameter Name to {0}
+  text_sameSwitchWarning: Same Switch is included. This may cause unexpected behavior.
+  text_onOffSwitchGroupTutorialInfo: When one of them is turned on, all the others
+    are turned off.
+  text_mixedSyncModeWarning: SyncMode is mixed. This may cause unexpected behavior.
+  text_linkModeWarning: Link Mode is enabled. This switch is automatically ignore
+    from the group.
+  text_onOffSwitches: OnOff Switches

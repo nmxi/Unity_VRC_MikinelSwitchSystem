@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="BgmSwitchSection" class="settings-section">
+        <ui:VisualElement name="LabelBase" class="settings-section-title settings-section-title-base">
+            <ui:Label text="BGM Switch Settings" name="Title" class="settings-section-title-label" />
+        </ui:VisualElement>
+        <ui:IMGUIContainer name="BgmSwitchSectionInfo" />
+        <ui:VisualElement name="Space" style="height: 10px; align-items: auto;" />
+        <ui:VisualElement>
+            <uie:ObjectField label="Audio Source" name="AudioSource" />
+            <ui:VisualElement name="AudioVolume">
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Slider picking-mode="Ignore" label="Audio Volume" value="0" high-value="1" name="FloatSlider" usage-hints="None" style="flex-direction: row; flex-basis: auto; justify-content: flex-start; align-items: center; flex-grow: 1;" />
+                    <uie:FloatField value="0" name="FloatField" readonly="false" style="align-items: auto; width: 40px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Toggle label="Reset On Enable" name="ResetOnEnable" />
+            <ui:Toggle label="Enable Fade" name="EnableFade" />
+            <uie:FloatField label="Fade Time (s)" value="0" name="FadeTime" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Space" style="height: 10px; align-items: auto;" />
+</ui:UXML>

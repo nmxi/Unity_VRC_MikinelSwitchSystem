@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="TitleImage" style="min-height: 50px; background-image: url(&apos;/Assets/mikinel/SwitchSystem/DataSource/TexMat/InspectorHeader.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(84, 84, 84); flex-grow: 0;">
+        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
+        <ui:VisualElement style="overflow: visible; flex-grow: 1; display: flex; flex-direction: column; min-height: 70px;">
+            <ui:Label text="mikinel Switch System" style="flex-grow: 1; -unity-text-align: middle-center; justify-content: center; font-size: 24px; color: rgb(192, 190, 190); -unity-font-style: bold; overflow: visible; -unity-font: url(&apos;/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/Inconsolata-Regular.ttf&apos;); flex-shrink: 1;" />
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                <ui:Label text="version : " style="flex-grow: 1; -unity-text-align: middle-right; justify-content: flex-end; font-size: 18px; color: rgb(192, 190, 190); -unity-font-style: bold; overflow: hidden; -unity-font: url(&apos;/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/Lato-Bold.ttf&apos;); flex-shrink: 1; flex-basis: auto; position: relative; align-items: flex-end; height: 22px; top: auto; white-space: nowrap; right: 0; bottom: 0; margin-bottom: 2px;" />
+                <ui:Label text="0.0.0" name="Version" style="flex-grow: 1; -unity-text-align: middle-left; justify-content: flex-end; font-size: 16px; color: rgb(192, 190, 190); -unity-font-style: bold; overflow: hidden; -unity-font: url(&apos;/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/Lato-Bold.ttf&apos;); flex-shrink: 1; flex-basis: auto; position: relative; align-items: flex-end; height: 22px; top: auto; white-space: nowrap; right: 0; bottom: 0; min-width: 40px; margin-bottom: 2px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

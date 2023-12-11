@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement>
+        <ui:Toggle label="Toggle" name="EnableAnyStates" />
+        <uie:IntegerField label="State" value="0" name="State" />
+        <uie:ObjectField label="Target Udon" name="TargetUdon" />
+        <ui:TextField picking-mode="Ignore" label="Event Name" name="EventName" />
+    </ui:VisualElement>
+</ui:UXML>

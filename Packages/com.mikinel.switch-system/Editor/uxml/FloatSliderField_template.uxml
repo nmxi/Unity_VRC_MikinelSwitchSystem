@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement style="flex-direction: row;">
+        <ui:Slider picking-mode="Ignore" label="FloatSliderField" value="0" high-value="1" name="FloatSlider" usage-hints="None" style="flex-direction: row; flex-basis: auto; justify-content: flex-start; align-items: center; flex-grow: 1;" />
+        <uie:FloatField value="0" name="FloatField" readonly="false" style="align-items: auto; width: 40px;" />
+    </ui:VisualElement>
+</ui:UXML>
