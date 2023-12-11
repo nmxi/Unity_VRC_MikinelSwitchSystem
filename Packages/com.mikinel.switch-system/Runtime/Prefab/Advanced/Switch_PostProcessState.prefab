@@ -380,18 +380,10 @@ MonoBehaviour:
   _interactAudioVolume: 1
   _showSyncModeSuffix: 0
   _syncModeSuffix: /{SYNC_MODE}
-  _udonEventEnableAnyStates: 01000000
-  _udonEventStates: 00000000010000000200000003000000
-  _udonEventTargets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _udonEventNames:
-  - Debug0
-  - Debug1
-  - Debug2
-  - Debug3
+  _udonEventEnableAnyStates: 
+  _udonEventStates: 
+  _udonEventTargets: []
+  _udonEventNames: []
   _enableObjectControl: 0
   _controlStates: 
   _controlObjects: []
