@@ -2,6 +2,15 @@ name: Build Release
 
 on: 
   workflow_dispatch:
+  push:
+    branches: main
+    path: Package/com.mikinel.switch-system/**
+
+env:
+  packageName: "com.mikinel.switch-system"
+
+permissions:
+  contents: write
 
 jobs:
 
