@@ -1,5 +1,6 @@
 ﻿using UdonSharp;
 using UnityEngine;
+using UnityEngine.Serialization;
 using VRC.SDKBase;
 using VRC.Udon;
 using VRC.Udon.Common.Interfaces;
@@ -20,38 +21,29 @@ namespace mikinel.vrc.SwitchSystem
         //現状、Stateの最大値は設けていない
         
         //UdonSynced Variables
-        [SerializeField, UdonSynced, FieldChangeCallback(nameof(synced_syncMode))] 
-        private int _synced_syncMode = SYNC_MODE_LOCAL;
+        [SerializeField, UdonSynced, FieldChangeCallback(nameof(SyncedSyncMode))] 
+        private int _syncedSyncMode = SYNC_MODE_LOCAL;
         
-        [SerializeField, UdonSynced, FieldChangeCallback(nameof(synced_currentState))] 
-        private int _synced_currentState;
+        [SerializeField, UdonSynced, FieldChangeCallback(nameof(SyncedCurrentState))] 
+        private int _syncedCurrentState;
         
-        public int synced_syncMode
+        public int SyncedSyncMode
         {
-            get => _synced_syncMode;
+            get => _syncedSyncMode;
             set
             {
-                _synced_syncMode = value;
-                
-                if(synced_syncMode == SYNC_MODE_GLOBAL)
-                {
-                    SetLocalStateWithoutNotify(synced_currentState);
-                }
-
+                _syncedSyncMode = value;
                 UpdateInteractionText();    //Suffixの更新
             }
         }
 
-        public int synced_currentState
+        public int SyncedCurrentState
         {
-            get => _synced_currentState;
+            get => _syncedCurrentState;
             set
             {
-                _synced_currentState = value;
-                
-                SetLocalStateWithoutNotify(_synced_currentState);
-                
-                InvokeLinkedSwitchStateChangedCallback();
+                _syncedCurrentState = value;
+                SetLocalState(_syncedCurrentState);
             }
         }
         
@@ -65,11 +57,9 @@ namespace mikinel.vrc.SwitchSystem
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);
             }
             
-            _synced_syncMode = syncMode;
-            _synced_currentState = localState;  //現在のlocalStateを全員に同期する
+            SyncedSyncMode = syncMode;
+            SyncedCurrentState = localState;  //現在のlocalStateを全員に同期する
             RequestSerialization();
-            
-            SetLocalStateWithoutNotify(synced_currentState);
         }
 
         [SerializeField] private string _interactionText;    //ボタンに表示するテキスト
@@ -77,29 +67,30 @@ namespace mikinel.vrc.SwitchSystem
         [SerializeField] private int _localState;
         public int localState => _localState;
 
-        public void SetLocalState(int newState)
+        public void SetState(int newState)
         {
             if (localState == newState)
             {
                 return;
             }
-            
-            if (synced_syncMode == SYNC_MODE_GLOBAL)
+            if (SyncedSyncMode == SYNC_MODE_GLOBAL)
             {
-                //synced_syncModeがGlobalのときはsynced_currentStateを更新する
+                // SyncedSyncModeがGlobalのときはSyncedCurrentStateを更新する
                 if (!Networking.IsOwner(Networking.LocalPlayer, gameObject))
                 {
                     Networking.SetOwner(Networking.LocalPlayer, gameObject);    
                 }
-                
-                _synced_currentState = newState;
+            
+                SyncedCurrentState = newState;
                 RequestSerialization();
             }
-            
-            SetLocalStateWithoutNotify(newState);
+            else
+            {
+                SetLocalState(newState);
+            }
         }
         
-        public void SetLocalStateWithoutNotify(int newState)
+        public void SetLocalState(int newState)
         {
             if (_localState == newState)
             {
@@ -262,16 +253,6 @@ namespace mikinel.vrc.SwitchSystem
             _interactAudioSource.PlayOneShot(_interactAudioClip, _interactAudioVolume);
         }
 
-        public override void OnPlayerJoined(VRCPlayerApi player)
-        {
-            if (!player.isLocal)
-            {
-                return;
-            }
-            
-            SendCustomNetworkEvent(NetworkEventTarget.Owner, nameof(RequestSerialization));
-        }
-
         /// <summary>
         /// 初期化時に呼ばれる
         /// </summary>
@@ -375,7 +356,7 @@ namespace mikinel.vrc.SwitchSystem
             if (_showSyncModeSuffix)
             {
                 //Suffixのパターンを置換する
-                var replacement = synced_syncMode == SYNC_MODE_LOCAL ? "Local" : "Global";
+                var replacement = SyncedSyncMode == SYNC_MODE_LOCAL ? "Local" : "Global";
                 var startIndex = _syncModeSuffix.IndexOf(syncModeSuffixReplacement);
                 if (startIndex != -1)
                 {
@@ -458,7 +439,7 @@ namespace mikinel.vrc.SwitchSystem
             }
             
             //LinkTargetSwitchのStateをコピーする
-            SetLocalStateWithoutNotify(_linkTargetSwitch.localState);
+            SetLocalState(_linkTargetSwitch.localState);
         }
 
         #endregion

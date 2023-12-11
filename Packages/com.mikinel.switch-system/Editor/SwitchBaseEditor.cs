@@ -22,7 +22,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
         protected SerializedProperty _linkModeProperty;
         protected SerializedProperty _linkTargetSwitchProperty;
 
-        protected SerializedProperty _synced_syncModeProperty;
+        protected SerializedProperty _syncedSyncModeProperty;
         protected SerializedProperty _localStateProperty;
 
         protected SerializedProperty _interactionTextProperty;
@@ -138,11 +138,11 @@ namespace mikinel.vrc.SwitchSystem.Editor
             generalSettingsLabel.text = _languageDataSet.text_generalSettings;
 
             //SyncMode
-            var modePopupField = new PopupField<string>(_languageDataSet.text_syncMode, _syncModeList, _synced_syncModeProperty.intValue);
+            var modePopupField = new PopupField<string>(_languageDataSet.text_syncMode, _syncModeList, _syncedSyncModeProperty.intValue);
             modePopupField.RegisterValueChangedCallback(evt =>
             {
-                _synced_syncModeProperty.intValue = evt.newValue == "Local" ? 0 : 1;
-                SetVariable(_switchBase, typeof(SwitchBase), "_synced_syncMode", _synced_syncModeProperty.intValue);
+                _syncedSyncModeProperty.intValue = evt.newValue == "Local" ? 0 : 1;
+                SetVariable(_switchBase, typeof(SwitchBase), "_syncedSyncMode", _syncedSyncModeProperty.intValue);
                 EditorUtility.SetDirty(_switchBase);
             });
             root.Q<VisualElement>("Mode").Add(modePopupField);
@@ -534,7 +534,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
             _linkModeProperty = serializedObject.FindProperty("_enableLinkMode");
             _linkTargetSwitchProperty = serializedObject.FindProperty("_linkTargetSwitch");
             
-            _synced_syncModeProperty = serializedObject.FindProperty("_synced_syncMode");
+            _syncedSyncModeProperty = serializedObject.FindProperty("_syncedSyncMode");
             _localStateProperty = serializedObject.FindProperty("_localState");
             
             _interactionTextProperty = serializedObject.FindProperty("_interactionText");

@@ -105,9 +105,9 @@ namespace mikinel.vrc.SwitchSystem.Editor
                     {
                         if(mode == -1)
                         {
-                            mode = switchBase.synced_syncMode;
+                            mode = switchBase.SyncedSyncMode;
                         }
-                        else if(mode != switchBase.synced_syncMode)
+                        else if(mode != switchBase.SyncedSyncMode)
                         {
                             isMixed = true;
                         }
