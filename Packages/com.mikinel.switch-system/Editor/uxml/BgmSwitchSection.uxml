@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
     <ui:VisualElement name="BgmSwitchSection" class="settings-section">
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
         <ui:VisualElement name="LabelBase" class="settings-section-title settings-section-title-base">
             <ui:Label text="BGM Switch Settings" name="Title" class="settings-section-title-label" />
         </ui:VisualElement>
@@ -18,5 +19,7 @@
             <uie:FloatField label="Fade Time (s)" value="0" name="FadeTime" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="Space" style="height: 10px; align-items: auto;" />
+    <ui:VisualElement name="Space" style="height: 10px; align-items: auto;">
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
+    </ui:VisualElement>
 </ui:UXML>

@@ -1,22 +1,22 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
     <ui:VisualElement name="Header">
-        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
-        <ui:VisualElement name="TitleImage" style="background-image: url(&apos;/Assets/mikinel/SwitchSystem/DataSource/TexMat/InspectorHeader.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(84, 84, 84); flex-grow: 0;">
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
+        <ui:VisualElement name="TitleImage" style="background-image: url(&apos;/Packages/com.mikinel.switch-system/Runtime/DataSource/TexMat/InspectorHeader.png&apos;); -unity-background-scale-mode: scale-and-crop; -unity-background-image-tint-color: rgb(84, 84, 84); flex-grow: 0;">
             <ui:VisualElement style="overflow: visible; flex-grow: 1; display: flex; flex-direction: row; min-height: 30px;">
                 <ui:Label text="Switch Group" name="TypeInfo" style="flex-grow: 1; justify-content: center; overflow: visible; -unity-text-align: middle-center; -unity-background-image-tint-color: rgb(255, 255, 255); -unity-font-style: bold;" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="PlayingModeInfo" style="min-height: 24px; background-color: rgb(0, 119, 255); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; display: none;">
-        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
         <ui:Label text="Cannot edit in play mode" style="flex-grow: 1; -unity-text-align: middle-center; font-size: 14px; color: rgb(19, 18, 18); -unity-font: url(&apos;/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/fontawesome-webfont.ttf&apos;); -unity-font-style: bold;" />
     </ui:VisualElement>
     <ui:VisualElement name="CanNotMultiEditLabel" style="min-height: 24px; background-color: rgb(255, 120, 0); border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px;">
-        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
         <ui:Label text="Can not multi-edit" style="flex-grow: 1; -unity-text-align: middle-center; font-size: 14px; color: rgb(19, 18, 18); -unity-font: url(&apos;/Packages/com.vrchat.worlds/Runtime/Udon/Fonts/fontawesome-webfont.ttf&apos;); -unity-font-style: bold;" />
     </ui:VisualElement>
     <ui:VisualElement name="Body">
-        <Style src="/Assets/mikinel/SwitchSystem/Editor/uss/SwitchSystemInspector.uss" />
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
         <ui:VisualElement name="GeneralSettingsSection" class="settings-section">
             <ui:VisualElement name="LabelBase" class="settings-section-title settings-section-title-base">
                 <ui:Label text="General Settings" name="Title" class="settings-section-title-label" />
