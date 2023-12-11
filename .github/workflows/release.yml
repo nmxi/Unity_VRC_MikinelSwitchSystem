@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: main
-    path: Package/com.mikinel.switch-system/**
+    path: Packages/com.mikinel.switch-system/**
 
 env:
   packageName: "com.mikinel.switch-system"
