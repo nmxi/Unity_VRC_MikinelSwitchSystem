@@ -9,7 +9,7 @@ namespace mikinel.vrc.SwitchSystem
 
         protected override void OnInteract()
         {
-            SetLocalState(localState == _maxState ? 0 : localState + 1);
+            SetState(localState == _maxState ? 0 : localState + 1);
         }
     }
 }

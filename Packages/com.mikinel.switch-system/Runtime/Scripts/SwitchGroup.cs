@@ -77,7 +77,7 @@ namespace mikinel.vrc.SwitchSystem
                     continue;
                 }
                     
-                switches[i].SetLocalStateWithoutNotify(0);
+                switches[i].SetLocalState(0);
             }
         }
 

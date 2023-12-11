@@ -114,7 +114,7 @@ namespace mikinel.vrc.SwitchSystem
                         }
                         else
                         {
-                            switch (switchBase.synced_syncMode)
+                            switch (switchBase.SyncedSyncMode)
                             {
                                 case SwitchBase.SYNC_MODE_LOCAL:
                                     labelText = $"SyncMode : Local";
@@ -123,7 +123,7 @@ namespace mikinel.vrc.SwitchSystem
                                     labelText = $"SyncMode : Global";
                                     break;
                                 default:
-                                    Debug.LogError($"Unknown syncMode: {switchBase.synced_syncMode}");
+                                    Debug.LogError($"Unknown syncMode: {switchBase.SyncedSyncMode}");
                                     break;
                             }   
                         }

@@ -9,7 +9,7 @@
     {
         protected override void OnInteract()
         {
-            SetLocalState(localState == 0 ? 1 : 0);
+            SetState(localState == 0 ? 1 : 0);
         }
     }
 }
