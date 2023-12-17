@@ -71,6 +71,8 @@ namespace mikinel.vrc.SwitchSystem.Editor
             {
                 Debug.LogError($"LanguageDataSet not found : {language}");
                 
+                ReloadLanguageData();
+                
                 SetLanguage(defaultLanguageCode);
                 
                 return GetLanguageDataSet();
