@@ -20,6 +20,11 @@ namespace mikinel.vrc.SwitchSystem
 
         private void Update()
         {
+            if (IsEnableLinkMode)
+            {
+                return;
+            }
+            
             if(_lastMaxBgmVolume != _maxBgmVolume)
             {
                 //MaxBgmVolumeが変更されたとき
@@ -56,6 +61,11 @@ namespace mikinel.vrc.SwitchSystem
         protected override void OnStateChanged(int state)
         {
             base.OnStateChanged(state);
+
+            if (IsEnableLinkMode)
+            {
+                return;
+            }
             
             var isOn = state == 1;
             

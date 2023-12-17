@@ -105,15 +105,15 @@ namespace mikinel.vrc.SwitchSystem.Editor
                     {
                         if(mode == -1)
                         {
-                            mode = switchBase.SyncedSyncMode;
+                            mode = switchBase.SyncMode;
                         }
-                        else if(mode != switchBase.SyncedSyncMode)
+                        else if(mode != switchBase.SyncMode)
                         {
                             isMixed = true;
                         }
                     }
 
-                    if (switchBase.EnableLinkMode)
+                    if (switchBase.IsEnableLinkMode)
                     {
                         foundEnabledLinkModeSwitch = true;
                     }

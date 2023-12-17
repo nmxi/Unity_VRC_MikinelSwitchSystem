@@ -13,6 +13,11 @@ namespace mikinel.vrc.SwitchSystem
         {
             base.OnStateChanged(state);
 
+            if (IsEnableLinkMode)
+            {
+                return;
+            }
+
             foreach (var gameObject in _gameObjects)
             {
                 if (gameObject == null)

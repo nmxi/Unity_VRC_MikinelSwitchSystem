@@ -11,9 +11,9 @@ namespace mikinel.vrc.SwitchSystem
     [DisallowMultipleComponent]
     public abstract class SwitchBase : UdonSharpBehaviour
     {
-        [SerializeField] private bool _enableLinkMode;
+        [SerializeField] private bool _isEnableLinkMode;
         [SerializeField] private SwitchBase _linkTargetSwitch;
-        public bool EnableLinkMode => _enableLinkMode;
+        public bool IsEnableLinkMode => _isEnableLinkMode;
 
         //NOTE : SwitchのStateについて
         //Stateは0から始まる
@@ -21,29 +21,29 @@ namespace mikinel.vrc.SwitchSystem
         //現状、Stateの最大値は設けていない
         
         //UdonSynced Variables
-        [SerializeField, UdonSynced, FieldChangeCallback(nameof(SyncedSyncMode))] 
-        private int _syncedSyncMode = SYNC_MODE_LOCAL;
+        [SerializeField, UdonSynced, FieldChangeCallback(nameof(SyncMode))] 
+        private int syncMode = SYNC_MODE_LOCAL;
         
-        [SerializeField, UdonSynced, FieldChangeCallback(nameof(SyncedCurrentState))] 
-        private int _syncedCurrentState;
+        [SerializeField, UdonSynced, FieldChangeCallback(nameof(CurrentState))] 
+        private int currentState;
         
-        public int SyncedSyncMode
+        public int SyncMode
         {
-            get => _syncedSyncMode;
+            get => syncMode;
             set
             {
-                _syncedSyncMode = value;
+                syncMode = value;
                 UpdateInteractionText();    //Suffixの更新
             }
         }
 
-        public int SyncedCurrentState
+        public int CurrentState
         {
-            get => _syncedCurrentState;
+            get => currentState;
             set
             {
-                _syncedCurrentState = value;
-                SetLocalState(_syncedCurrentState);
+                currentState = value;
+                SetLocalState(currentState);
             }
         }
         
@@ -57,8 +57,8 @@ namespace mikinel.vrc.SwitchSystem
                 Networking.SetOwner(Networking.LocalPlayer, gameObject);
             }
             
-            SyncedSyncMode = syncMode;
-            SyncedCurrentState = localState;  //現在のlocalStateを全員に同期する
+            SyncMode = syncMode;
+            CurrentState = localState;  //現在のlocalStateを全員に同期する
             RequestSerialization();
         }
 
@@ -73,7 +73,7 @@ namespace mikinel.vrc.SwitchSystem
             {
                 return;
             }
-            if (SyncedSyncMode == SYNC_MODE_GLOBAL)
+            if (SyncMode == SYNC_MODE_GLOBAL)
             {
                 // SyncedSyncModeがGlobalのときはSyncedCurrentStateを更新する
                 if (!Networking.IsOwner(Networking.LocalPlayer, gameObject))
@@ -81,7 +81,7 @@ namespace mikinel.vrc.SwitchSystem
                     Networking.SetOwner(Networking.LocalPlayer, gameObject);    
                 }
             
-                SyncedCurrentState = newState;
+                CurrentState = newState;
                 RequestSerialization();
             }
             else
@@ -162,7 +162,7 @@ namespace mikinel.vrc.SwitchSystem
 
         private void Start()
         {
-            if (_enableLinkMode)
+            if (_isEnableLinkMode)
             {
                 if(_linkTargetSwitch == null)
                 {
@@ -172,7 +172,7 @@ namespace mikinel.vrc.SwitchSystem
                     return;
                 }
                 
-                if(_linkTargetSwitch.EnableLinkMode && _enableLinkMode)
+                if(_linkTargetSwitch.IsEnableLinkMode && _isEnableLinkMode)
                 {
                     DebugLogError($"link target is already enable link mode");
                     InteractionText = $"ERROR : SWITCH IS BROKEN";
@@ -195,9 +195,9 @@ namespace mikinel.vrc.SwitchSystem
 
         public override void Interact()
         {
-            if(_enableLinkMode && 
+            if(_isEnableLinkMode && 
                _linkTargetSwitch != null &&
-               _linkTargetSwitch.EnableLinkMode)
+               _linkTargetSwitch.IsEnableLinkMode)
             {
                 DebugLogError($"CopycatTarget is already enable copycat mode");
                 InteractionText = $"ERROR : SWITCH IS BROKEN";
@@ -233,7 +233,7 @@ namespace mikinel.vrc.SwitchSystem
             }
 
             //LinkMode
-            if(_enableLinkMode)
+            if(_isEnableLinkMode)
             {
                 if (_linkTargetSwitch == null)
                 {
@@ -356,7 +356,7 @@ namespace mikinel.vrc.SwitchSystem
             if (_showSyncModeSuffix)
             {
                 //Suffixのパターンを置換する
-                var replacement = SyncedSyncMode == SYNC_MODE_LOCAL ? "Local" : "Global";
+                var replacement = SyncMode == SYNC_MODE_LOCAL ? "Local" : "Global";
                 var startIndex = _syncModeSuffix.IndexOf(syncModeSuffixReplacement);
                 if (startIndex != -1)
                 {

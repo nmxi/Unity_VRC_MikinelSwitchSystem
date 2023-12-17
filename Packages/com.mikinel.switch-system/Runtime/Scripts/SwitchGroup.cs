@@ -72,7 +72,7 @@ namespace mikinel.vrc.SwitchSystem
                     continue;
                 }
 
-                if (switches[i].EnableLinkMode)
+                if (switches[i].IsEnableLinkMode)
                 {
                     continue;
                 }

@@ -455,7 +455,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
                         //LinkTargetSwitchに設定されているスイッチの設定がLinkMode=trueの場合は警告を出す
                         var linkTargetSwitch = _linkTargetSwitchProperty.objectReferenceValue as SwitchBase;
                         if (linkTargetSwitch != null &&
-                            linkTargetSwitch.EnableLinkMode)
+                            linkTargetSwitch.IsEnableLinkMode)
                         {
                             var infoText = ReplacePlaceholder(_languageDataSet.text_linkTargetSwitchIsEnableLinkModeWarning, new[] { _switchBase.gameObject.name });
                             GUI.color = Color.white;
@@ -531,10 +531,10 @@ namespace mikinel.vrc.SwitchSystem.Editor
         {
             _switchBase = target as SwitchBase;
             
-            _linkModeProperty = serializedObject.FindProperty("_enableLinkMode");
+            _linkModeProperty = serializedObject.FindProperty("_isEnableLinkMode");
             _linkTargetSwitchProperty = serializedObject.FindProperty("_linkTargetSwitch");
             
-            _syncedSyncModeProperty = serializedObject.FindProperty("_syncedSyncMode");
+            _syncedSyncModeProperty = serializedObject.FindProperty("syncMode");
             _localStateProperty = serializedObject.FindProperty("_localState");
             
             _interactionTextProperty = serializedObject.FindProperty("_interactionText");

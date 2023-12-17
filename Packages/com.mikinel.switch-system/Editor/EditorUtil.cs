@@ -108,13 +108,13 @@ namespace mikinel.vrc.SwitchSystem
                     var labelText = " ";
                     if (switchBase != null)
                     {
-                        if (switchBase.EnableLinkMode)
+                        if (switchBase.IsEnableLinkMode)
                         {
                             labelText = $"Copycat switch";
                         }
                         else
                         {
-                            switch (switchBase.SyncedSyncMode)
+                            switch (switchBase.SyncMode)
                             {
                                 case SwitchBase.SYNC_MODE_LOCAL:
                                     labelText = $"SyncMode : Local";
@@ -123,7 +123,7 @@ namespace mikinel.vrc.SwitchSystem
                                     labelText = $"SyncMode : Global";
                                     break;
                                 default:
-                                    Debug.LogError($"Unknown syncMode: {switchBase.SyncedSyncMode}");
+                                    Debug.LogError($"Unknown syncMode: {switchBase.SyncMode}");
                                     break;
                             }   
                         }
