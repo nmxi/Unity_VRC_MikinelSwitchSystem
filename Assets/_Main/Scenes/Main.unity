@@ -961,7 +961,7 @@ PrefabInstance:
     - target: {fileID: 6693838012553978470, guid: c9974132c1f00734b92040f0a03b3fdc,
         type: 3}
       propertyPath: _chairObjects.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6693838012553978470, guid: c9974132c1f00734b92040f0a03b3fdc,
         type: 3}

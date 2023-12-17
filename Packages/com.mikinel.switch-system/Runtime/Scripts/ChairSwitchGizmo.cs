@@ -33,26 +33,30 @@ namespace mikinel.vrc.SwitchSystem
                     continue;
                 }
                 
-                var pos = chairObject.transform.position;
-                var distance = Vector3.Distance(pos, SceneView.lastActiveSceneView.camera.transform.position);
+                var rootPos = chairObject.transform.position;
+                var distance = Vector3.Distance(rootPos, SceneView.lastActiveSceneView.camera.transform.position);
 
                 // 距離が一定値以下の場合のみラベルを描画
                 if (distance <= 10f) // ここで距離の閾値を設定
                 {
-                    //子オブジェクトからmeshの含まれるオブジェクトを取得
-                    var meshFilter = chairObject.GetComponentInChildren<MeshFilter>();
-                    if (meshFilter != null)
+                    //子オブジェクトからmeshの含まれるオブジェクトを全て取得
+                    var meshFilters = chairObject.GetComponentsInChildren<MeshFilter>();
+                    if (meshFilters != null || meshFilters.Length <= 0)
                     {
-                        var gameObject = meshFilter.gameObject;
-                        var mesh = meshFilter.sharedMesh;
-                        var rotation = gameObject.transform.rotation;
-                        var scale = gameObject.transform.lossyScale;
+                        foreach (var meshFilter in meshFilters)
+                        {
+                            var gameObject = meshFilter.gameObject;
+                            var mesh = meshFilter.sharedMesh;
+                            var pos = gameObject.transform.position;
+                            var rotation = gameObject.transform.rotation;
+                            var scale = gameObject.transform.lossyScale;
                     
-                        Gizmos.DrawMesh(mesh, pos, rotation, scale);   
+                            Gizmos.DrawMesh(mesh, pos, rotation, scale);   
+                        }
                     }
                     else
                     {
-                        Gizmos.DrawSphere(pos, 0.2f);
+                        Gizmos.DrawSphere(rootPos, 0.2f);
                     }
 
                     var text = chairObject.name;
@@ -63,7 +67,7 @@ namespace mikinel.vrc.SwitchSystem
                         alignment = TextAnchor.MiddleCenter
                     };
 
-                    Handles.Label(pos + Vector3.up * 0.4f, text, style);
+                    Handles.Label(rootPos + Vector3.up * 0.4f, text, style);
                 }
             }
         }
