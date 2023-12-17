@@ -25,14 +25,12 @@ namespace mikinel.vrc.SwitchSystem.Editor
                 .Select(AssetDatabase.LoadAssetAtPath<LanguageDataSet>)
                 .ToList();
             
-            AddMenuItem("MikinelTools/SwitchSystem/Set Language/en", 0, () => Debug.Log("en"));
+            Debug.Log($"Load LanguageDataSet : {string.Join(", ", languageDataSets.Select(x => x.languageCode))}");
 
             for (var i = 0; i < languageDataSets.Count; i++)
             {
                 var languageDataSet = languageDataSets[i];
-                Debug.Log($"Load lang : {languageDataSet.languageDisplayName}");
-
-                var displayName = languageDataSet.languageCode;
+                var displayName = languageDataSet.languageDisplayName;
                 var name = $"MikinelTools/SwitchSystem/Set Language/{displayName}";
 
                 AddMenuItem(name, i, () => SetLanguage(languageDataSet.languageCode));
@@ -42,8 +40,16 @@ namespace mikinel.vrc.SwitchSystem.Editor
             internalUpdateAllMenus?.Invoke(null, null);
         }
 
+        private static bool isFirstAddMenuItem = true;
         private static void AddMenuItem(string name, int priority, Action action)
         {
+            //最初のAddMenuItemだけメニューが表示されないので、一回だけAddMenuItemを呼ぶ
+            if (isFirstAddMenuItem)
+            {
+                isFirstAddMenuItem = false;
+                AddMenuItem(name, priority, action);
+            }
+            
             var addMenuItemMethod = typeof(Menu).GetMethod("AddMenuItem", BindingFlags.Static | BindingFlags.NonPublic);
             addMenuItemMethod?.Invoke(null, new object[] { name, null, null, priority, action, null });
         }
