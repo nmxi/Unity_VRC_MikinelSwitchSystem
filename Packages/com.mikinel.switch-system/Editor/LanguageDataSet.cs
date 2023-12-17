@@ -54,6 +54,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
         
         //ChairSwitch
         public string text_chairSwitchSettings = "Chair Switch Settings";
+        public string text_controlRenderer = "Control Renderer";
         public string text_chairObjects = "Chair Objects";
         
         //InteractAudio

@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="UntitledSection" class="settings-section">
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
+        <ui:VisualElement name="LabelBase" class="settings-section-title settings-section-title-base">
+            <ui:Label text="Unique Settings" name="SectionTitle" class="settings-section-title-label" />
+        </ui:VisualElement>
+        <ui:IMGUIContainer name="Information" />
+        <ui:VisualElement name="Space" style="height: 10px; align-items: auto;" />
+        <ui:Toggle label="Control Renderer" name="ControlRenderer" />
+        <ui:IMGUIContainer name="MainContainer" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Space" style="height: 10px; align-items: auto;">
+        <Style src="/Packages/com.mikinel.switch-system/Editor/uss/SwitchSystemInspector.uss" />
+    </ui:VisualElement>
+</ui:UXML>

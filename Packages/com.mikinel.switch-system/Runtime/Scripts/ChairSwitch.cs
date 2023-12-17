@@ -7,7 +7,8 @@ namespace mikinel.vrc.SwitchSystem
     public class ChairSwitch : OnOffSwitch
     {
         [Space] 
-        [SerializeField] private VRCStation[] _vrcStations;
+        [SerializeField] private bool _isControlRenderer;   //イスのOnOffと同時にRendererのOnOffも行うか
+        [SerializeField] private GameObject[] _chairObjects;
         
         protected override void OnStateChanged(int state)
         {
@@ -15,10 +16,18 @@ namespace mikinel.vrc.SwitchSystem
 
             var isOn = state == 1;
 
-            foreach (var vrcStation in _vrcStations)
+            foreach (var chairObject in _chairObjects)
             {
+                if (chairObject == null)
+                {
+                    continue;
+                }
+                
+                //chairObjectの全ての子、またはchairObjectからVRCStationを取得する
+                var vrcStation = chairObject.GetComponentInChildren<VRCStation>();
                 if (vrcStation == null)
                 {
+                    Debug.LogError($"{chairObject.name} has no VRCStation");
                     continue;
                 }
 
@@ -39,6 +48,16 @@ namespace mikinel.vrc.SwitchSystem
                 }
                 
                 vrcStation.GetComponent<Collider>().enabled = isOn;
+                
+                //子オブジェクトに含まれるRendererのOnOff
+                if (_isControlRenderer)
+                {
+                    var renderers = chairObject.GetComponentsInChildren<Renderer>();
+                    foreach (var renderer in renderers)
+                    {
+                        renderer.enabled = isOn;
+                    }
+                }
             }
         }
     }
