@@ -1,9 +1,9 @@
+using System;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UIElements;
-using VRC.SDK3.Components;
 
 namespace mikinel.vrc.SwitchSystem.Editor
 {
@@ -60,6 +60,17 @@ namespace mikinel.vrc.SwitchSystem.Editor
             
             _isControlRendererProperty = serializedObject.FindProperty("_isControlRenderer");
             _chairObjectsProperty = serializedObject.FindProperty("_chairObjects");
+        }
+
+        private void OnEnable()
+        {
+            //ChairSwitchGizmoを追加
+            var chairSwitch = (ChairSwitch) target;
+            
+            if (chairSwitch.GetComponent<ChairSwitchGizmo>() == null)
+            {
+                chairSwitch.gameObject.AddComponent<ChairSwitchGizmo>();
+            }
         }
     }
 }

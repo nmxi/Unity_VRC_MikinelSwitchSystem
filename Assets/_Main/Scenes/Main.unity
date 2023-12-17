@@ -541,6 +541,24 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+--- !u!1 &264172606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6693838012553978467, guid: c9974132c1f00734b92040f0a03b3fdc,
+    type: 3}
+  m_PrefabInstance: {fileID: 721895052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &264172607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264172606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52b6dac6cb3eb24ca0f7fb6e59557d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &271805489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -971,6 +989,11 @@ PrefabInstance:
       propertyPath: _chairObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1788211948}
+    - target: {fileID: 6693838012553978470, guid: c9974132c1f00734b92040f0a03b3fdc,
+        type: 3}
+      propertyPath: _chairObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6693838012553978473, guid: c9974132c1f00734b92040f0a03b3fdc,
         type: 3}
       propertyPath: m_RootOrder
