@@ -90,11 +90,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489569045183523464}
-  - component: {fileID: 1489569045183523507}
+  - component: {fileID: 4420801831525254028}
   - component: {fileID: 1489569045183523465}
   - component: {fileID: 1489569045183523467}
   - component: {fileID: 1489569045183523466}
-  - component: {fileID: 1489569045183523506}
+  - component: {fileID: 2010559156449464920}
   m_Layer: 0
   m_Name: Switch_Collider
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1489569045183523507
+--- !u!114 &4420801831525254028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489569045183523509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca02b7b6bf3441078a32b1d861704482, type: 3}
+  m_Script: {fileID: 11500000, guid: 4657605e054163e4aabd655ff9345af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -138,11 +138,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  _udonSharpBackingUdonBehaviour: {fileID: 1489569045183523506}
-  _enableLinkMode: 0
+  _udonSharpBackingUdonBehaviour: {fileID: 2010559156449464920}
+  _isEnableLinkMode: 0
   _linkTargetSwitch: {fileID: 0}
-  _synced_syncMode: 0
-  _synced_currentState: 0
+  syncMode: 0
+  currentState: 0
   _interactionText: Collider
   _localState: 0
   _isPlayInteractAudio: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   linkedUdonBehaviours: []
   OnLinkedStateChangedCallbackMethodNames: []
   debugLog: 0
-  _colliders: []
+  _gameObjects: []
 --- !u!65 &1489569045183523465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ MonoBehaviour:
   VolumetricRadius: 0
   EnableSpatialization: 1
   UseAudioSourceVolumeCurve: 1
---- !u!114 &1489569045183523506
+--- !u!114 &2010559156449464920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,10 +318,10 @@ MonoBehaviour:
   SynchronizePosition: 0
   AllowCollisionOwnershipTransfer: 0
   Reliable: 0
-  _syncMethod: 3
-  serializedProgramAsset: {fileID: 11400000, guid: 9f40428d858c38f4dbc45f7f3c78b61a,
+  _syncMethod: 0
+  serializedProgramAsset: {fileID: 11400000, guid: 1919340c2bce45b41a1b682317c7a2db,
     type: 2}
-  programSource: {fileID: 11400000, guid: b7114b0444c06134585b7ca90d010931, type: 2}
+  programSource: {fileID: 11400000, guid: 8a2827af3ba5ec544b1781f94b8cde6d, type: 2}
   serializedPublicVariablesBytesString: Ai8AAAAAATIAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAFQAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AAAAAAAYBAAAAAAAAACcBBAAAAHQAeQBwAGUAAWgAAABTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEcAZQBuAGUAcgBpAGMALgBMAGkAcwB0AGAAMQBbAFsAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4ALgBJAG4AdABlAHIAZgBhAGMAZQBzAC4ASQBVAGQAbwBuAFYAYQByAGkAYQBiAGwAZQAsACAAVgBSAEMALgBVAGQAbwBuAC4AQwBvAG0AbQBvAG4AXQBdACwAIABtAHMAYwBvAHIAbABpAGIAAQEJAAAAVgBhAHIAaQBhAGIAbABlAHMALwEAAAABaAAAAFMAeQBzAHQAZQBtAC4AQwBvAGwAbABlAGMAdABpAG8AbgBzAC4ARwBlAG4AZQByAGkAYwAuAEwAaQBzAHQAYAAxAFsAWwBWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAEkAbgB0AGUAcgBmAGEAYwBlAHMALgBJAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlACwAIABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgBdAF0ALAAgAG0AcwBjAG8AcgBsAGkAYgABAAAABgEAAAAAAAAAAi8CAAAAAUkAAABWAFIAQwAuAFUAZABvAG4ALgBDAG8AbQBtAG8AbgAuAFUAZABvAG4AVgBhAHIAaQBhAGIAbABlAGAAMQBbAFsAUwB5AHMAdABlAG0ALgBJAG4AdAAzADIALAAgAG0AcwBjAG8AcgBsAGkAYgBdAF0ALAAgAFYAUgBDAC4AVQBkAG8AbgAuAEMAbwBtAG0AbwBuAAIAAAAGAgAAAAAAAAAnAQQAAAB0AHkAcABlAAEXAAAAUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwAsACAAbQBzAGMAbwByAGwAaQBiACcBCgAAAFMAeQBtAGIAbwBsAE4AYQBtAGUAAR8AAABfAF8AXwBVAGQAbwBuAFMAaABhAHIAcABCAGUAaABhAHYAaQBvAHUAcgBWAGUAcgBzAGkAbwBuAF8AXwBfACcBBAAAAHQAeQBwAGUAARYAAABTAHkAcwB0AGUAbQAuAEkAbgB0ADMAMgAsACAAbQBzAGMAbwByAGwAaQBiABcBBQAAAFYAYQBsAHUAZQACAAAABwUHBQcF
   publicVariablesUnityEngineObjects: []
   publicVariablesSerializationDataFormat: 0
