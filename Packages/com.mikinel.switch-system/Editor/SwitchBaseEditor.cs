@@ -78,7 +78,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
             
             var header = root.Q<VisualElement>("Header");
             var version = header.Query().Descendents<Label>("Version").First();
-            version.text = $"{Version.CurrentVersion}";
+            version.text = $"{Version.CurrentVersion()}";
             
             //EnableLinkMode
             _linkModeToggle = root.Q<Toggle>("EnableLinkMode");

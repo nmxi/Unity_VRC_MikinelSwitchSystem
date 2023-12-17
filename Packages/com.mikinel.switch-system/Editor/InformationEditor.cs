@@ -18,7 +18,7 @@ namespace mikinel.vrc.SwitchSystem
             root.Add(container);
 
             var versionLabel = root.Q<Label>("Version");
-            versionLabel.text = $"{Version.CurrentVersion}";
+            versionLabel.text = $"{Version.CurrentVersion()}";
 
             return container;
         }
