@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using mikinel.vrc.SwitchSystem.Editor;
 using UnityEngine;
 
 namespace mikinel.vrc.SwitchSystem
@@ -9,8 +10,7 @@ namespace mikinel.vrc.SwitchSystem
         {
             var AssetDirectoryPath = Application.dataPath;
             var upDirectory = Path.Combine(AssetDirectoryPath, "../");
-            var packageDirectoryPath = Path.Combine(upDirectory, "Packages");
-            var packageJsonPath = Path.Combine(packageDirectoryPath, "com.mikinel.switch-system/package.json");
+            var packageJsonPath = Path.Combine(upDirectory, $"{Config.packagePath}/package.json");
             var packageJson = File.ReadAllText(packageJsonPath);
             
             var version = packageJson.Split(new[] {"\"version\": \""}, System.StringSplitOptions.None)[1];

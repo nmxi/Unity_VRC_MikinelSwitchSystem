@@ -463,26 +463,5 @@ namespace mikinel.vrc.SwitchSystem
             
             return result;
         }
-        
-        public static bool GetLanguageDataSet(string path, string language, out LanguageDataSet languageDataSet)
-        {
-            var languageDataSetNames = AssetDatabase.FindAssets("t:LanguageDataSet", new[] {path});
-            
-            //LanguageDataSetのScriptableObjectを全て取得する
-            var languageDataSetList = languageDataSetNames
-                .Select(AssetDatabase.GUIDToAssetPath)
-                .Select(AssetDatabase.LoadAssetAtPath<LanguageDataSet>)
-                .ToList();
-
-            languageDataSet = languageDataSetList.FirstOrDefault(x => x.languageCode == language);
-            if (languageDataSet != null)
-            {
-                return true;
-            }
-            
-            languageDataSet = new LanguageDataSet();
-            return false;
-
-        }
     }
 }

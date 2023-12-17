@@ -49,6 +49,7 @@ MonoBehaviour:
   text_colliderSwitchSettings: Collider Switch Settings
   text_colliderObjects: Collider Objects
   text_chairSwitchSettings: Chair Switch Settings
+  text_controlRenderer: Control Renderer
   text_chairObjects: Chair Objects
   text_interactAudio: Interact Audio
   text_enableInteractionAudio: Enable Interaction Audio

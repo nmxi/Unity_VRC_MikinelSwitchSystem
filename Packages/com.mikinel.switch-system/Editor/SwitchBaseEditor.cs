@@ -66,7 +66,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
             FindProperties();
             serializedObject.Update();
             
-            InitLocalization();
+            _languageDataSet = Config.GetLanguageDataSet();
 
             var container = _baseUxml.CloneTree();
 
@@ -564,19 +564,6 @@ namespace mikinel.vrc.SwitchSystem.Editor
             _enableAnimatorTriggerControlProperty = serializedObject.FindProperty("_enableAnimatorTriggerControl");
             _animatorTriggerControlTargetParameterNameProperty = serializedObject.FindProperty("_animatorTriggerControlTargetParameterName");
             _triggerControlTargetAnimatorsProperty = serializedObject.FindProperty("_triggerControlTargetAnimators");
-        }
-
-        private void InitLocalization()
-        {
-            //このスクリプトの存在するパスを取得する
-            var path = AssetDatabase.GetAssetPath(MonoScript.FromScriptableObject(this));
-            
-            //同じディレクトリ内にあるlangディレクトリ内のLanguageDataSetクラスのScriptableObjectを全て取得する
-            path = Path.Combine(Path.GetDirectoryName(path), "lang");
-
-            var language = EditorPrefs.GetString(Config.languageEditorPrefsKey, "en");
-
-            GetLanguageDataSet(path, language, out _languageDataSet);
         }
     }
 }
