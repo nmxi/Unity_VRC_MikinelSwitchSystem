@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 namespace mikinel.vrc.SwitchSystem
@@ -73,3 +74,4 @@ namespace mikinel.vrc.SwitchSystem
         }
     }
 }
+#endif
