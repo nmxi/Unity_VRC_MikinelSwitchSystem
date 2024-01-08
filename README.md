@@ -3,6 +3,9 @@
 VRC UDON すいっち しすてむ
 開発中
 
+## LICENSE
+MIT
+
 ## 3rd party notice
 heroicons - MIT License  
 https://heroicons.com/
