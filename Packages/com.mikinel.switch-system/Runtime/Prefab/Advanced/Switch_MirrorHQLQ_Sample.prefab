@@ -822,7 +822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2265403175471918157}
   m_Layer: 0
-  m_Name: MirrorHQLQ_Sample
+  m_Name: Switch_MirrorHQLQ_Sample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
