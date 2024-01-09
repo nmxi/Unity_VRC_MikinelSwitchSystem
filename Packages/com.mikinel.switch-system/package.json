@@ -1,8 +1,8 @@
 {
   "name": "com.mikinel.switch-system",
   "displayName": "Mikinel Switch System",
-  "version": "0.11.10",
-  "unity": "2019.4",
+  "version": "0.11.11",
+  "unity": "2022.3",
   "description": "mikinel Switch System",
   "gitDependencies": {},
   "vpmDependencies": {

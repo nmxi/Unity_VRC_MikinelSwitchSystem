@@ -92,7 +92,7 @@ MonoBehaviour:
   OnLinkedStateChangedCallbackMethodNames: []
   debugLog: 0
   _gameObjects:
-  - {fileID: 0}
+  - {fileID: 9060336075899034475}
 --- !u!65 &4893469896131119297
 BoxCollider:
   m_ObjectHideFlags: 0

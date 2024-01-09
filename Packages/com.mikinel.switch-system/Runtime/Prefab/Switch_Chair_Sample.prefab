@@ -483,9 +483,7 @@ MonoBehaviour:
   OnLinkedStateChangedCallbackMethodNames: []
   debugLog: 0
   _isControlRenderer: 0
-  _chairObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  _chairObjects: []
 --- !u!65 &2848295218887232030
 BoxCollider:
   m_ObjectHideFlags: 0
