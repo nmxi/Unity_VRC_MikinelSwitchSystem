@@ -1,7 +1,7 @@
 {
   "name": "com.mikinel.switch-system",
   "displayName": "Mikinel Switch System",
-  "version": "0.11.11",
+  "version": "0.12.0",
   "unity": "2022.3",
   "description": "mikinel Switch System",
   "gitDependencies": {},

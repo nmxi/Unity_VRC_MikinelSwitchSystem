@@ -12,6 +12,9 @@ namespace mikinel.vrc.SwitchSystem
         [SerializeField] private bool _enableFade;
         [SerializeField] private float _fadeTime = 1f;
         
+        //Advanced
+        public bool forceMasterMute;
+        
         private bool _isInitialized;
         private float _targetVolume;
 
@@ -38,23 +41,51 @@ namespace mikinel.vrc.SwitchSystem
             if (!_enableFade)
             {
                 //フェードしない場合
-                _audioSource.volume = _targetVolume;
-                return;
-            }
 
-            if (_audioSource.volume < _targetVolume)
-            {
-                //フェードイン
-                _audioSource.volume = _audioSource.volume + _fadeDeltaVolume < _targetVolume
-                    ? _audioSource.volume + _fadeDeltaVolume
-                    : _targetVolume;
+                if (forceMasterMute)
+                {
+                    //MasterMuteが有効な場合
+                    _audioSource.volume = 0f;
+                }
+                else
+                {
+                    //MasterMuteが無効な場合
+                    _audioSource.volume = _targetVolume;   
+                }
             }
             else
             {
-                //フェードアウト
-                _audioSource.volume = _audioSource.volume - _fadeDeltaVolume > _targetVolume
-                    ? _audioSource.volume - _fadeDeltaVolume
-                    : _targetVolume;
+                //フェードする場合
+                
+                if (forceMasterMute)
+                {
+                    //MasterMuteが有効な場合
+                    if (_audioSource.volume > 0f)
+                    {
+                        //強制的にフェードアウト
+                        _audioSource.volume = _audioSource.volume - _fadeDeltaVolume > 0f
+                            ? _audioSource.volume - _fadeDeltaVolume
+                            : 0f;
+                    }
+                }
+                else
+                {
+                    //MasterMuteが無効な場合
+                    if (_audioSource.volume < _targetVolume)
+                    {
+                        //フェードイン
+                        _audioSource.volume = _audioSource.volume + _fadeDeltaVolume < _targetVolume
+                            ? _audioSource.volume + _fadeDeltaVolume
+                            : _targetVolume;
+                    }
+                    else
+                    {
+                        //フェードアウト
+                        _audioSource.volume = _audioSource.volume - _fadeDeltaVolume > _targetVolume
+                            ? _audioSource.volume - _fadeDeltaVolume
+                            : _targetVolume;
+                    }      
+                }
             }
         }
 
@@ -87,5 +118,8 @@ namespace mikinel.vrc.SwitchSystem
             
             _targetVolume = isOn ? _maxBgmVolume : 0f;
         }
+        
+        public void EnableForceMasterMute() => forceMasterMute = true;
+        public void DisableForceMasterMute() => forceMasterMute = false;
     }
 }
