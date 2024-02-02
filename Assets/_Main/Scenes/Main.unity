@@ -1561,6 +1561,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2225765751307995092, guid: 8d8624cf08e8bd644bd96569569b83e5,
         type: 3}
+      propertyPath: _localState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225765751307995092, guid: 8d8624cf08e8bd644bd96569569b83e5,
+        type: 3}
       propertyPath: _isEnableLinkMode
       value: 1
       objectReference: {fileID: 0}
@@ -1583,12 +1588,12 @@ PrefabInstance:
     - target: {fileID: 4791096516118532484, guid: 8d8624cf08e8bd644bd96569569b83e5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4791096516118532484, guid: 8d8624cf08e8bd644bd96569569b83e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4791096516118532484, guid: 8d8624cf08e8bd644bd96569569b83e5,
         type: 3}
@@ -2905,6 +2910,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 724026902}
     m_Modifications:
+    - target: {fileID: 2225765751307995092, guid: 8d8624cf08e8bd644bd96569569b83e5,
+        type: 3}
+      propertyPath: _localState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2225765751307995092, guid: 8d8624cf08e8bd644bd96569569b83e5,
+        type: 3}
+      propertyPath: _isEnableLinkMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2225765751307995092, guid: 8d8624cf08e8bd644bd96569569b83e5,
         type: 3}
       propertyPath: serializationData.Prefab

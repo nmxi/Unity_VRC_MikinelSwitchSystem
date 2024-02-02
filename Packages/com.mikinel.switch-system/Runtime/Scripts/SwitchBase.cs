@@ -191,6 +191,9 @@ namespace mikinel.vrc.SwitchSystem
                 
                 var self = gameObject.GetComponent<UdonBehaviour>();
                 _linkTargetSwitch.AddOnLinkSwitchStateChangedCallback(self, nameof(OnInvokeLinkSwitchStateChangedCallback));
+                
+                //LinkTargetSwitchのStateをコピーする
+                SetLocalState(_linkTargetSwitch.localState);
             }
 
             //Initialize
