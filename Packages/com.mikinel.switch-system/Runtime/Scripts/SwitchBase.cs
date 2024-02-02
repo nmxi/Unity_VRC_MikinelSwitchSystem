@@ -1,9 +1,7 @@
 ﻿using UdonSharp;
 using UnityEngine;
-using UnityEngine.Serialization;
 using VRC.SDKBase;
 using VRC.Udon;
-using VRC.Udon.Common.Interfaces;
 
 namespace mikinel.vrc.SwitchSystem
 {
@@ -67,6 +65,10 @@ namespace mikinel.vrc.SwitchSystem
         [SerializeField] private int _localState;
         public int localState => _localState;
 
+        /// <summary>
+        /// スイッチのStateを変更する
+        /// 外部からスイッチのStateを変更するときはこちらを使う
+        /// </summary>
         public void SetState(int newState)
         {
             if (localState == newState)
@@ -90,6 +92,10 @@ namespace mikinel.vrc.SwitchSystem
             }
         }
         
+        /// <summary>
+        /// スイッチの内部実行用メソッド
+        /// 外部からスイッチのStateを変更するときはSetStateメソッドを使うこと
+        /// </summary>
         public void SetLocalState(int newState)
         {
             if (_localState == newState)

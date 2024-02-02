@@ -121,5 +121,25 @@ namespace mikinel.vrc.SwitchSystem
         
         public void EnableForceMasterMute() => forceMasterMute = true;
         public void DisableForceMasterMute() => forceMasterMute = false;
+        
+        public void SetMaxBgmVolume(float volume)
+        {
+            _maxBgmVolume = volume;
+        }
+        
+        public void SetResetOnEnable(bool value)
+        {
+            _resetOnEnable = value;
+        }
+        
+        public void SetEnableFade(bool value)
+        {
+            _enableFade = value;
+        }
+
+        public void SetFadeTime(float time)
+        {
+            _fadeTime = time;
+        }
     }
 }
