@@ -142,7 +142,7 @@ namespace mikinel.vrc.SwitchSystem.Editor
             modePopupField.RegisterValueChangedCallback(evt =>
             {
                 _syncedSyncModeProperty.intValue = evt.newValue == "Local" ? 0 : 1;
-                SetVariable(_switchBase, typeof(SwitchBase), "_syncedSyncMode", _syncedSyncModeProperty.intValue);
+                SetVariable(_switchBase, typeof(SwitchBase), "syncMode", _syncedSyncModeProperty.intValue);
                 EditorUtility.SetDirty(_switchBase);
             });
             root.Q<VisualElement>("Mode").Add(modePopupField);
