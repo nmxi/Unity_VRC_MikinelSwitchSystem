@@ -63,3 +63,9 @@ crashlytics-build.properties
 Assets/PackageMakerWindowData.asset*
 .idea
 .vscode
+
+# Assets
+/[Aa]ssets/
+!/[Aa]ssets/_Main/
+!/[Aa]ssets/mikinel/
+
