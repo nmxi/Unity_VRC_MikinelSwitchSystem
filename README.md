@@ -1,7 +1,7 @@
 # mikinel Switch System
 
-VRC UDON すいっち しすてむ
-開発中
+Udon製 スイッチシステム
+開発中につき、大幅な変更が入る可能性があります。ご了承ください。
 
 ## LICENSE
 MIT
