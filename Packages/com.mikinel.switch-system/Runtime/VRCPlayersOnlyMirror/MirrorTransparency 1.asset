@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: MirrorTransparency 1
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 5500754642f8032408a2faacc17e19af,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 36d00fa31a8ce554c898de126fbc741c,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export uiSlider\r\n    .export Mirror\r\n   
     \r\n    __instance_0: %UnityEngineMaterial, null\r\n    __name_0: %SystemString,
