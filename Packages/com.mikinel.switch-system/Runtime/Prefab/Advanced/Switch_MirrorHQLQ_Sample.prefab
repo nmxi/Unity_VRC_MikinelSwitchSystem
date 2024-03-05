@@ -116,8 +116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009000778, y: 0.13666311, z: 0.07396287}
-  m_Center: {x: 0.006201744, y: 0, z: 0.0000008046627}
+  m_Size: {x: 0.072688974, y: 0.13666311, z: 0.008260969}
+  m_Center: {x: 0, y: 0, z: 0.0045485925}
 --- !u!82 &2265403173744208849
 AudioSource:
   m_ObjectHideFlags: 0
@@ -274,7 +274,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &2265403174328227575
 Transform:
