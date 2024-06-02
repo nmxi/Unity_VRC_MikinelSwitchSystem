@@ -6,7 +6,7 @@
   "description": "mikinel Switch System",
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "3.5.0"
+    "com.vrchat.worlds": "3.6.1"
   },
   "author": {
     "name": "mikinel",
