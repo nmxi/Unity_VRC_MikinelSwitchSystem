@@ -1,12 +1,12 @@
 {
   "name": "com.mikinel.switch-system",
   "displayName": "Mikinel Switch System",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "unity": "2022.3",
   "description": "mikinel Switch System",
   "gitDependencies": {},
   "vpmDependencies": {
-    "com.vrchat.worlds": "3.6.1"
+    "com.vrchat.worlds": "3.8.2"
   },
   "author": {
     "name": "mikinel",
